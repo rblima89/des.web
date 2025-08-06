@@ -1,0 +1,14 @@
+body{
+    background-color: orange;
+    padding: 5em;
+}
+
+p{
+    border-radius: 30%;
+    background-color: white;
+    padding: 2em;
+}
+button{
+    background-color: blue;
+    width: auto;
+}
