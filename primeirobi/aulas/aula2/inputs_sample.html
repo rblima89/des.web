@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Prático de Inputs HTML</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            padding: 20px;
+        }
+
+        .form-showcase {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1877f2;
+            margin-bottom: 2rem;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        legend {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #1c1e21;
+            padding: 0 0.5em;
+        }
+
+        .input-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]),
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .description {
+            font-size: 0.85rem;
+            color: #606770;
+            margin-top: 5px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .button-group input,
+        .button-group button {
+            cursor: pointer;
+            border-radius: 6px;
+            border: none;
+            padding: 10px 15px;
+            font-weight: 600;
+        }
+
+        input[type="submit"] {
+            background-color: #1877f2;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #e4e6eb;
+            color: #4b4f56;
+        }
+
+        input[type="button"],
+        button {
+            background-color: #6c757d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="form-showcase">
+        <h1>Guia Prático de Inputs HTML</h1>
+        <form action="#" method="post">
+
+            <label for="user_email">Seu e-mail:</label>
+            <input type="email" id="user_email" name="email">
+
+            <fieldset>
+                <legend>Entradas de Texto e Contato</legend>
+
+                <div class="input-group">
+                    <label for="username">Nome de Usuário (text):</label>
+                    <input type="text" id="username" name="username" placeholder="Mínimo 5 caracteres" required
+                        minlength="5" maxlength="20">
+                </div>
+
+                <div class="input-group">
+                    <label for="user_pass">Senha (password):</label>
+                    <input type="password" id="user_pass" name="user_pass" required
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Deve conter no mínimo 8 caracteres, com letra maiúscula, minúscula e número.">
+                    <p class="description">Senha forte para sua segurança.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="user_email">E-mail (email):</label>
+                    <input type="email" id="user_email" name="user_email" placeholder="seu.email@provedor.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="user_tel">Telefone (tel):</label>
+                    <input type="tel" id="user_tel" name="user_tel" placeholder="(45) 99999-9999"
+                        pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}">
+                </div>
+
+                <div class="input-group">
+                    <label for="user_url">Site Pessoal (url):</label>
+                    <input type="url" id="user_url" name="user_url" placeholder="https://www.seusite.com.br">
+                </div>
+
+                <div class="input-group">
+                    <label for="main_search">Busca (search):</label>
+                    <input type="search" id="main_search" name="q" placeholder="Buscar no site...">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Seleção e Escolha</legend>
+
+                <div class="input-group">
+                    <label>Tipo de Assinatura (radio):</label>
+                    <label style="display:inline-flex; align-items:center; margin-right: 15px;"><input type="radio"
+                            name="assinatura" value="mensal" checked> Mensal</label>
+                    <label style="display:inline-flex; align-items:center;"><input type="radio" name="assinatura"
+                            value="anual"> Anual</label>
+                </div>
+
+                <div class="input-group">
+                    <label>Notificações (checkbox):</label>
+                    <label style="display:inline-flex; align-items:center;">
+                        <input type="checkbox" id="notif_email" name="notif_email" value="1" checked> Quero receber
+                        notificações por e-mail.
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label for="theme_color">Cor do Tema (color):</label>
+                    <input type="color" id="theme_color" name="theme_color" value="#1877f2">
+                </div>
+
+                <div class="input-group">
+                    <label for="profile_pic">Foto de Perfil (file):</label>
+                    <input type="file" id="profile_pic" name="profile_pic" accept="image/png, image/jpeg">
+                    <p class="description">Apenas arquivos .png ou .jpg</p>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados Numéricos e de Intervalo</legend>
+
+                <div class="input-group">
+                    <label for="user_age">Idade (number):</label>
+                    <input type="number" id="user_age" name="user_age" min="18" max="120" step="1"
+                        placeholder="Apenas maiores de 18">
+                </div>
+
+                <div class="input-group">
+                    <label for="satisfaction">Nível de Satisfação (range): <output id="range_val">50</output></label>
+                    <input type="range" id="satisfaction" name="satisfaction" min="0" max="100" value="50"
+                        oninput="range_val.value = this.value">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datas e Horários</legend>
+
+                <div class="input-group">
+                    <label for="birth_date">Data de Nascimento (date):</label>
+                    <input type="date" id="birth_date" name="birth_date" min="1925-01-01" max="2007-12-31">
+                </div>
+
+                <div class="input-group">
+                    <label for="appointment_time">Horário do Agendamento (time):</label>
+                    <input type="time" id="appointment_time" name="appointment_time" min="09:00" max="18:00">
+                    <p class="description">Agendamentos disponíveis das 09:00 às 18:00.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="full_appointment">Data e Hora Completas (datetime-local):</label>
+                    <input type="datetime-local" id="full_appointment" name="full_appointment" value="2025-10-20T14:30">
+                </div>
+
+                <div class="input-group">
+                    <label for="billing_month">Mês de Cobrança (month):</label>
+                    <input type="month" id="billing_month" name="billing_month" value="2025-12">
+                </div>
+
+                <div class="input-group">
+                    <label for="project_week">Semana do Projeto (week):</label>
+                    <input type="week" id="project_week" name="project_week" value="2025-W42">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ações do Formulário</legend>
+
+                <input type="hidden" id="session_token" name="session_token"
+                    value="a1b2c3d4-e5f6-7890-g1h2-i3j4k5l6m7n8">
+
+                <div class="button-group">
+                    <input type="submit" value="Enviar Formulário (submit)">
+
+                    <button type="submit">
+                        Enviar form com button
+                    </button>
+
+                    <input type="reset" value="Limpar Campos (reset)">
+
+                    <input type="button" value="Ação Customizada (button)" onclick="alert('Ação via JavaScript!')">
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+</body>
+
+</html>
