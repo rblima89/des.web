@@ -1,0 +1,44 @@
+/* CSS Básico */
+
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    
+    text-align: center;
+    color: #0077cc;
+    margin-top: 20px;
+}
+
+p {
+    text-transform: lowercase;
+    text-align: center;
+    background-color: aqua;
+    line-height: 1.6;
+    border:0cm
+    
+}
+li p{
+    text-align: center;
+    text-overflow: clip;
+    font-style: oblique;
+}
+button{
+    padding: 10px;;
+    text-align: center;
+    border: #0077cc;
+    background-attachment: fixed;
+    cursor: pointer;
+    
+}
+button:hover {
+    margin: auto;
+    border: #ca5858;
+    background-color:#0077cc;
+}
